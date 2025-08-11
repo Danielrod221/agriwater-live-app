@@ -83,20 +83,22 @@
             <div class="lg:col-span-1 space-y-8">
                 <div class="space-y-6">
                     
+                    <!-- Key Reservoir Card -->
                     <div class="bg-white border border-slate-200 rounded-lg shadow-sm p-5 flex items-center transition hover:shadow-xl hover:-translate-y-1 group">
                         <div class="bg-sky-100 rounded-full p-3 mr-4">
                             <svg class="h-6 w-6 text-sky-600 transition-transform group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0H21m-18 0h9.523M6 18v-5.841m1.5-1.5L9 9.75M15 12l-1.5-1.5m0 0l-1.5 1.5m1.5-1.5V18" /></svg>
                         </div>
                         <div>
-                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">SUCCESS LAKE LEVEL</p>
-                            {% if success_lake_info and success_lake_info.value is not none %}
-                                <p class="text-2xl font-bold text-sky-600">{{ "{:,.0f}".format(success_lake_info.value) }}<span class="text-lg font-medium text-slate-600"> AF</span></p>
-                                <p class="text-xs text-slate-500">As of {{ success_lake_info.date }}</p>
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">LAKE SHASTA LEVEL</p>
+                            {% if shasta_info and shasta_info.value is not none %}
+                                <p class="text-2xl font-bold text-sky-600">{{ "{:,.0f}".format(shasta_info.value) }}<span class="text-lg font-medium text-slate-600"> AF</span></p>
+                                <p class="text-xs text-slate-500">As of {{ shasta_info.date }}</p>
                             {% else %}
                                 <p class="text-sm font-medium text-slate-500">Live data unavailable</p>
                             {% endif %}
                         </div>
                     </div>
+                    <!-- End Key Reservoir Card -->
 
                     <div x-data="{ editing: false }" class="bg-white border border-slate-200 rounded-lg shadow-sm p-5 transition hover:shadow-xl hover:-translate-y-1 group">
                         <div class="flex justify-between items-start">
@@ -171,13 +173,13 @@
       document.addEventListener('DOMContentLoaded', function() {
         const ctx = document.getElementById('balanceChart');
         if (ctx) {
-            // Safely get values from Jinja2, defaulting to 0 if they don't exist
-            const annualAllocation = {{ current_user.annual_allocation|tojson }} || 0;
-            const currentBalance = {{ current_balance|tojson }} || 0;
+            // Safely get values from Jinja2 using the tojson filter, which handles nulls
+            const annualAllocation = {{ current_user.annual_allocation|tojson }};
+            const currentBalance = {{ current_balance|tojson }};
 
-            // Perform math in pure JavaScript
-            const waterUsed = Math.max(0, annualAllocation - currentBalance);
-            const waterRemaining = Math.max(0, currentBalance);
+            // Perform math in pure JavaScript, checking for null before calculating
+            const waterUsed = Math.max(0, (annualAllocation || 0) - (currentBalance || 0));
+            const waterRemaining = Math.max(0, currentBalance || 0);
 
             new Chart(ctx, {
                 type: 'doughnut',
