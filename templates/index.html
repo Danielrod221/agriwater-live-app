@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Water Marketplace (AWM) - Trade Water. Your Marketplace for Farm Water.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .btn-primary { background-color: #007BFF; color: white; transition: all 0.3s ease; }
+        .btn-primary:hover { background-color: #0056b3; }
+        .btn-secondary { background-color: white; color: #007BFF; border: 1px solid #007BFF; transition: all 0.3s ease; }
+        .btn-secondary:hover { background-color: #f0f7ff; }
+        .hero-water-bg { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(240)'%3E%3Cstop offset='0' stop-color='%230073E6'/%3E%3Cstop offset='1' stop-color='%23004080'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='540' height='450' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.08'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E"); position: relative; overflow: hidden; }
+        .water-wave { position: absolute; bottom: 0; left: 0; width: 100%; height: 100px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E"); background-size: cover; background-repeat: no-repeat; }
+        .legal-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .legal-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; }
+        .legal-content p { margin-bottom: 1rem; line-height: 1.6; }
+        .legal-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <span class="text-2xl font-bold text-blue-600">AWM</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" data-page="homepage" class="nav-link border-blue-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Home</a>
+                        <a href="#" data-page="our-services" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Our Services</a>
+                        <a href="#" data-page="about-us" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">About Us</a>
+                        <a href="/how-it-works" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">How It Works</a>
+                        <a href="#" data-page="sign-up" class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Sign Up</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button data-page="sign-in" class="nav-button btn-secondary px-4 py-2 rounded-md text-sm font-medium">Sign In</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#" data-page="homepage" class="mobile-nav-link block pl-3 pr-4 py-2 border-l-4 border-blue-500 text-base font-medium text-blue-700 bg-blue-50">Home</a>
+                <a href="#" data-page="our-services" class="mobile-nav-link block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700">Our Services</a>
+                <a href="#" data-page="about-us" class="mobile-nav-link block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700">About Us</a>
+                <a href="/how-it-works" class="mobile-nav-link block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700">How It Works</a>
+                <a href="#" data-page="sign-up" class="mobile-nav-link block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700">Sign Up</a>
+                <a href="#" data-page="sign-in" class="mobile-nav-link block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="p-4 mb-4 text-sm rounded-lg {% if category == 'error' %} bg-red-100 text-red-700 {% elif category == 'success' %} bg-green-100 text-green-700 {% else %} bg-blue-100 text-blue-700 {% endif %}" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+    </div>
+
+    <div id="main-content">
+        <div id="homepage" class="block">
+             <div class="hero-water-bg text-white relative">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10 text-center">
+                    <h1 class="text-5xl tracking-tight font-extrabold sm:text-6xl md:text-7xl mb-6">Trade Water. Farm Smarter.</h1>
+                    <p class="mt-3 max-w-md mx-auto text-xl md:mt-5 md:text-2xl md:max-w-3xl">Your Marketplace for Farm Water.</p>
+                    <div class="mt-10 flex justify-center">
+                        <button id="find-water-btn" class="btn-primary rounded-md shadow px-8 py-4 text-lg font-medium sm:px-10 mr-4 hover:scale-105 transition-transform">Find Water Allocations</button>
+                    </div>
+                </div>
+                <div class="water-wave"></div>
+            </div>
+            <div class="bg-white py-16">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center">
+                        <h2 class="text-3xl font-bold text-gray-900">How It Works</h2>
+                        <p class="mt-4 text-lg text-gray-600">Simple, secure, and transparent water trading</p>
+                    </div>
+                    <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+                        <div class="bg-gray-50 p-8 text-center rounded-lg"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto"><span class="text-2xl font-bold">1</span></div><h3 class="mt-6 text-xl font-medium text-gray-900">Get Verified</h3><p class="mt-4 text-base text-gray-600">Complete our secure verification process to confirm farm credentials.</p></div>
+                        <div class="bg-gray-50 p-8 text-center rounded-lg"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto"><span class="text-2xl font-bold">2</span></div><h3 class="mt-6 text-xl font-medium text-gray-900">List or Bid</h3><p class="mt-4 text-base text-gray-600">Post your water allocation for sale/lease or browse available listings.</p></div>
+                        <div class="bg-gray-50 p-8 text-center rounded-lg"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-600 text-white mx-auto"><span class="text-2xl font-bold">3</span></div><h3 class="mt-6 text-xl font-medium text-gray-900">Transact Securely</h3><p class="mt-4 text-base text-gray-600">Complete transactions with our secure system and automated district notifications.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="our-services" class="hidden">
+            <div class="bg-blue-600 py-12"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h1 class="text-3xl font-bold text-white">Our Services</h1><p class="mt-2 text-xl text-blue-100">Simplifying water trading for farmers</p></div></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-lg shadow-md"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mb-4"><i class="fas fa-handshake text-3xl"></i></div><h3 class="text-2xl font-bold text-gray-900">Local Water Trading</h3><p class="text-gray-600 mt-2">(Within Your District)</p><p class="text-gray-700 mt-4">Trade water allocations with your neighbors, hassle-free. We handle all the digital paperwork with your local water district so you can lease out your surplus or buy what you need, fast. It's the simplest way to manage your water.</p></div>
+                    <div class="bg-white p-8 rounded-lg shadow-md"><div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-600 mb-4"><i class="fas fa-exchange-alt text-3xl"></i></div><h3 class="text-2xl font-bold text-gray-900">Regional Water Trading</h3><p class="text-gray-600 mt-2">(Between Districts)</p><p class="text-gray-700 mt-4">Access a wider market by trading with growers in other water districts. We act as your logistics expert, managing the complex approvals and calculating all the fees for you. We make difficult transfers simple.</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-us" class="hidden">
+            <div class="bg-blue-600 py-12"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h1 class="text-3xl font-bold text-white">About Us</h1><p class="mt-2 text-xl text-blue-100">Modernizing agricultural water management</p></div></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center"><h2 class="text-3xl font-bold text-gray-900">Our Story</h2><p class="text-lg text-gray-600 mt-4">Born from the challenges faced by California farmers in places like Terra Bella, AWM was created by a citrus packer who understands the urgent need for a better way to manage water. We've built a digital platform that brings transparency, efficiency, and control to water trading, empowering our fellow growers to build a more resilient future.</p></div>
+        </div>
+
+        <div id="sign-up" class="hidden">
+            <div class="bg-gray-100 py-12"><div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-white p-8 rounded-xl shadow-lg"><div class="text-center mb-8"><h1 class="text-3xl font-bold text-gray-900">Create Your Account</h1><p class="mt-2 text-gray-600">Join the AWM platform to start trading.</p></div><form action="/signup" method="POST"><div class="space-y-6"><div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><label for="email" class="block text-sm font-medium text-gray-700">Email Address</label><input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><label for="password" class="block text-sm font-medium text-gray-700">Password</label><input type="password" name="password" id="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label><input type="tel" name="phone" id="phone" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><label for="district" class="block text-sm font-medium text-gray-700">Water District</label><input type="text" name="district" id="district" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><button type="submit" class="w-full btn-primary px-4 py-3 rounded-md text-base font-medium">Create Account</button></div></div></form></div></div></div>
+        </div>
+        
+        <div id="sign-in" class="hidden">
+            <div class="bg-gray-100 py-12"><div class="max-w-xl mx-auto px-4 sm:px-6 lg:px-8"><div class="bg-white p-8 rounded-xl shadow-lg"><div class="text-center mb-8"><h1 class="text-3xl font-bold text-gray-900">Sign In to Your Account</h1><p class="mt-2 text-gray-600">Welcome back to AWM.</p></div><form action="/login" method="POST"><div class="space-y-6"><div><label for="login-email" class="block text-sm font-medium text-gray-700">Email Address</label><input type="email" name="email" id="login-email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><label for="login-password" class="block text-sm font-medium text-gray-700">Password</label><input type="password" name="password" id="login-password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></div><div><button type="submit" class="w-full btn-primary px-4 py-3 rounded-md text-base font-medium">Sign In</button></div></div></form></div></div></div>
+        </div>
+
+        <div id="terms" class="hidden">
+            <div class="bg-white py-12"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 legal-content"><h1 class="text-4xl font-bold text-gray-900 mb-8">Terms of Service</h1><p><strong>Last Updated:</strong> August 5, 2025</p><p>Welcome to the Agri-Water Marketplace ("AWM," "we," "us," or "our"). These Terms of Service ("Terms") govern your use of our website, platform, and services (collectively, the "Platform"). By creating an account or using our Platform, you agree to these Terms.</p><h2>1. Our Role as a Platform</h2><p>Agri-Water Marketplace is a neutral technology platform that connects willing buyers and sellers of agricultural water allocations ("Users").</p><ul><li><strong>We are not a water broker, agent, or legal advisor.</strong> We do not own, sell, or lease any water rights ourselves.</li><li><strong>We do not handle or move physical water.</strong> Our service facilitates the transfer of legal water allocations on the records of the relevant water districts.</li><li><strong>We do not guarantee transactions.</strong> All transactions are solely between the buyer and the seller. We are not a party to any water lease or sale agreement.</li><li><strong>We do not verify the underlying water rights.</strong> Users are responsible for ensuring they have the legal right to the water they list.</li></ul><h2>2. User Accounts & Responsibilities</h2><ul><li><strong>Eligibility:</strong> You must be an active agricultural producer or landowner in California to use this Platform.</li><li><strong>Account Security:</strong> You are responsible for maintaining the confidentiality of your password and for all activities that occur under your account.</li><li><strong>Verification:</strong> You agree to provide accurate and truthful information during our verification and Stripe onboarding processes.</li><li><strong>Compliance:</strong> You agree to comply with all rules, regulations, and policies of your local water district, Groundwater Sustainability Agency (GSA), and all applicable state and federal laws.</li></ul><h2>3. Fees and Payments</h2><ul><li><strong>Subscription Fee:</strong> Access to the marketplace requires a non-refundable monthly subscription fee of $15.00, charged via our payment processor, Stripe.</li><li><strong>Brokerage Fee:</strong> For each successful water transaction completed through the Platform, AWM will charge the Seller a brokerage fee of <strong>3.5%</strong> of the total transaction value. This fee will be automatically deducted from the payout to the Seller by Stripe.</li><li><strong>Payments:</strong> All payments between buyers and sellers are processed through Stripe Connect. By using the Platform to sell water, you agree to create a Stripe Connected Account and be bound by the Stripe Connected Account Agreement. AWM is not responsible for payment disputes between users.</li></ul><h2>4. Limitation of Liability</h2><p>To the fullest extent permitted by law, Agri-Water Marketplace, its owner, and affiliates shall not be liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use the Platform. This includes, but is not limited to, financial losses from failed transactions, disputes between users, or regulatory actions by water districts.</p><h2>5. Dispute Resolution</h2><p>Any dispute arising out of or related to these Terms or the use of the Platform shall be resolved through binding arbitration in Tulare County, California.</p><h2>6. Changes to Terms</h2><p>We may modify these Terms at any time. We will notify you of any changes by posting the new Terms on the site. Your continued use of the Platform after such changes constitutes your acceptance of the new Terms.</p></div></div>
+        </div>
+
+        <div id="privacy" class="hidden">
+            <div class="bg-white py-12"><div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 legal-content"><h1 class="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1><p><strong>Last Updated:</strong> August 5, 2025</p><p>Agri-Water Marketplace ("AWM," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information.</p><h2>1. Information We Collect</h2><h3>Information You Provide:</h3><ul><li><strong>Account Information:</strong> When you sign up, we collect your name, email address, phone number, and designated water district.</li><li><strong>Financial Information:</strong> We do <strong>not</strong> collect or store your credit card or bank account information. This is handled directly and securely by our payment processor, Stripe.</li></ul><h3>Information We Collect Automatically:</h3><ul><li><strong>Usage Data:</strong> We may collect information about how you interact with our website, such as your IP address, browser type, and pages visited.</li></ul><h2>2. How We Use Your Information</h2><ul><li>To operate and maintain the Platform.</li><li>To process your subscription and marketplace transactions.</li><li>To facilitate communication between buyers and sellers.</li><li>To send you important notifications, such as transaction confirmations and updates.</li><li>To comply with legal obligations.</li></ul><h2>3. How We Share Your Information</h2><p>We only share your information with essential third-party service providers:</p><ul><li><strong>Stripe:</strong> To process your subscription payments and to facilitate payments between buyers and sellers. We share your email and user ID with Stripe for these purposes.</li><li><strong>SendGrid:</strong> To send you transactional email notifications (e.g., welcome emails, new offer alerts). We share your name and email address with SendGrid for this purpose.</li><li><strong>Water Districts:</strong> We will share the completed and signed transfer agreements, which include your name and transaction details, with the relevant water districts to execute the water transfer.</li></ul><p>We will <strong>never</strong> sell your personal information to third parties.</p><h2>4. Your Rights under the CCPA</h2><p>As a California resident, you have the right to:</p><ul><li>Know what personal information we have collected about you.</li><li>Request that we delete your personal information.</li><li>Opt-out of the sale of your personal information (which we do not do).</li></ul><p>To exercise these rights, please contact us at agri.equity@gmail.com.</p><h2>5. Data Security</h2><p>We use industry-standard security measures, including password hashing and secure connections, to protect your information. However, no method of transmission over the Internet is 100% secure.</p><h2>6. Contact Us</h2><p>If you have any questions about this Privacy Policy, please contact us at: agri.equity@gmail.com.</p></div></div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div><h3 class="text-lg font-semibold mb-4">Agri-Water Marketplace</h3><p class="text-gray-300 text-sm">Your trusted platform for agricultural water trading.</p></div>
+                <div><h3 class="text-lg font-semibold mb-4">Quick Links</h3><ul class="space-y-2 text-sm text-gray-300"><li><a href="#" data-page="homepage" class="nav-link hover:text-white">Home</a></li><li><a href="#" data-page="our-services" class="nav-link hover:text-white">Our Services</a></li><li><a href="#" data-page="about-us" class="nav-link hover:text-white">About Us</a></li><li><a href="#" data-page="sign-up" class="nav-link hover:text-white">Sign Up</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold mb-4">Legal</h3><ul class="space-y-2 text-sm text-gray-300"><li><a href="#" data-page="terms" class="nav-link hover:text-white">Terms of Service</a></li><li><a href="#" data-page="privacy" class="nav-link hover:text-white">Privacy Policy</a></li></ul></div>
+                <div><h3 class="text-lg font-semibold mb-4">Contact Us</h3><ul class="space-y-2 text-sm text-gray-300"><li>Terra Bella, CA</li><li>agri.equity@gmail.com</li><li>(661) 474-7488</li></ul></div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400"><p>&copy; 2025 Agri-Water Marketplace. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pageDivs = {
+                'homepage': document.getElementById('homepage'),
+                'our-services': document.getElementById('our-services'),
+                'about-us': document.getElementById('about-us'),
+                'sign-up': document.getElementById('sign-up'),
+                'sign-in': document.getElementById('sign-in'),
+                'terms': document.getElementById('terms'),
+                'privacy': document.getElementById('privacy')
+            };
+
+            const allNavElements = document.querySelectorAll('.nav-link, .nav-button, .mobile-nav-link');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function showPage(pageId) {
+                for (const id in pageDivs) {
+                    if (pageDivs[id]) pageDivs[id].classList.add('hidden');
+                }
+                if (pageDivs[pageId]) {
+                    pageDivs[pageId].classList.remove('hidden');
+                }
+
+                navLinks.forEach(link => {
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('border-blue-500', 'text-gray-900');
+                        link.classList.remove('border-transparent', 'text-gray-500');
+                    } else {
+                        link.classList.remove('border-blue-500', 'text-gray-900');
+                        link.classList.add('border-transparent', 'text-gray-500');
+                    }
+                });
+                
+                setTimeout(() => {
+                     mobileMenu.classList.add('hidden');
+                }, 100);
+
+                window.scrollTo(0, 0);
+            }
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            allNavElements.forEach(element => {
+                // If the link is a real URL (like /how-it-works), let the browser handle it.
+                // Otherwise, if it has a data-page attribute, use the SPA logic.
+                if (!element.getAttribute('href') || element.getAttribute('href') === '#') {
+                    element.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showPage(this.dataset.page);
+                    });
+                }
+            });
+            
+            document.getElementById('find-water-btn').addEventListener('click', function() {
+                showPage('sign-up');
+            });
+
+            if (window.location.hash) {
+                const pageId = window.location.hash.substring(1);
+                if (pageDivs[pageId]) {
+                    showPage(pageId);
+                } else {
+                    showPage('homepage');
+                }
+            } else {
+                showPage('homepage');
+            }
+        });
+    </script>
+</body>
+</html>
