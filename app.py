@@ -102,17 +102,18 @@ def send_for_signature(pdf_path, seller, buyer):
     else:
         print(f"SignWell Request Error: {request_response.text}"); return False
 
-def get_success_lake_data():
+def get_shasta_data():
     """
-    Fetches the latest reservoir storage data for Success Lake from the CDEC API.
+    Fetches the latest reservoir storage data for Shasta Dam from the CDEC API.
     """
     try:
-        today = datetime.now()
-        yesterday = today - timedelta(days=7) # Look back 7 days
-        start_date = yesterday.strftime('%Y-%m-%d')
-        end_date = today.strftime('%Y-%m-%d')
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=7)
+        start_date_str = start_date.strftime('%Y-%m-%d')
+        end_date_str = end_date.strftime('%Y-%m-%d')
         
-        api_url = f"http://cdec.water.ca.gov/dynamicapp/req/JSONDataServlet?Stations=SUC&SensorNums=15&dur_code=D&Start={start_date}&End={end_date}"
+        # Using Station 'SHA' for Shasta Dam
+        api_url = f"http://cdec.water.ca.gov/dynamicapp/req/JSONDataServlet?Stations=SHA&SensorNums=15&dur_code=D&Start={start_date_str}&End={end_date_str}"
         
         response = requests.get(api_url, timeout=15)
         response.raise_for_status()
@@ -128,8 +129,9 @@ def get_success_lake_data():
                     "value": int(value)
                 }
         return None
+
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching data from CDEC API for Success Lake: {e}")
+        print(f"Error fetching data from CDEC API for Shasta Dam: {e}")
         return None
 
 # --- Route Definitions ---
@@ -283,7 +285,7 @@ def dashboard():
 
     current_balance = (current_user['annual_allocation'] or 0) - total_sold + total_purchased
     
-    success_lake_info = get_success_lake_data()
+    shasta_info = get_shasta_data()
     
     cur.close(); conn.close()
     return render_template('dashboard.html', 
@@ -291,7 +293,7 @@ def dashboard():
                            current_user=current_user, 
                            current_balance=current_balance, 
                            stripe_account_is_active=stripe_account_is_active,
-                           success_lake_info=success_lake_info)
+                           shasta_info=shasta_info)
 
 @app.route('/purchase/<int:listing_id>')
 def purchase(listing_id):
