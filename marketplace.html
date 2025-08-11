@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWM Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Water Marketplace</h1>
+            <div>
+                <a href="/how-it-works" class="text-blue-600 hover:text-blue-800 font-medium mr-6">How It Works</a>
+                
+                <a href="/dashboard" class="text-blue-600 hover:text-blue-800 font-medium mr-6">My Dashboard</a>
+                <a href="/create_listing" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
+                    + Create New Listing
+                </a>
+            </div>
+        </div>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="p-4 mb-4 text-sm rounded-lg {% if category == 'error' %} bg-red-100 text-red-700 {% else %} bg-green-100 text-green-700 {% endif %}" role="alert">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for listing in listings %}
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div class="uppercase tracking-wide text-sm text-blue-600 font-semibold">{{ listing.listing_type }}</div>
+                        <div class="text-xl font-bold text-gray-800">${{ "%.2f"|format(listing.price_per_af) }} <span class="text-sm font-normal text-gray-500">/ AF</span></div>
+                    </div>
+                    <h2 class="mt-2 text-2xl font-bold text-gray-900">{{ "%.1f"|format(listing.amount_af) }} Acre-Feet</h2>
+                    <p class="mt-1 text-md text-gray-600">{{ listing.water_district }}</p>
+                    
+                    <p class="mt-1 text-sm font-semibold text-gray-500">Duration: {{ listing.lease_duration }}</p>
+                    
+                    <p class="mt-4 text-gray-500 h-16 overflow-hidden">{{ listing.description or 'No description provided.' }}</p>
+                    <div class="mt-6 border-t pt-4">
+                        <p class="text-sm text-gray-500">Seller: <span class="font-medium text-gray-700">{{ listing.seller_name }}</span></p>
+                        <a href="/purchase/{{ listing.id }}" class="mt-4 w-full text-center block bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600 transition">
+                            Purchase
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-span-full text-center py-12 bg-white rounded-lg shadow">
+                <p class="text-gray-500">No active listings at the moment. Be the first to create one!</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

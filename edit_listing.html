@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Water Lease</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <div class="text-center mb-8 relative">
+                <h1 class="text-3xl font-bold text-gray-900">Edit Your Water Lease</h1>
+                <p class="mt-2 text-gray-600">Update the details for your listing below.</p>
+                <div class="absolute top-0 left-0">
+                    <a href="/marketplace" class="text-blue-600 hover:text-blue-800 font-medium">&larr; Back to Marketplace</a>
+                </div>
+            </div>
+            <form action="/edit_listing/{{ listing.id }}" method="POST">
+                <input type="hidden" name="listing_type" value="Lease">
+                
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Lease Duration</label>
+                        <p class="mt-1 text-gray-900">1 Year</p>
+                        <input type="hidden" name="lease_duration" value="1 Year">
+                    </div>
+                    <div>
+                        <label for="water_district" class="block text-sm font-medium text-gray-700">Water District</label>
+                        <input type="text" name="water_district" id="water_district" value="{{ listing.water_district }}" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <label for="amount_af" class="block text-sm font-medium text-gray-700">Amount (Acre-Feet)</label>
+                            <input type="number" step="0.1" name="amount_af" id="amount_af" value="{{ listing.amount_af }}" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label for="price_per_af" class="block text-sm font-medium text-gray-700">Price per AF ($)</label>
+                            <input type="number" step="0.01" name="price_per_af" id="price_per_af" value="{{ listing.price_per_af }}" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="description" class="block text-sm font-medium text-gray-700">Description (Optional)</label>
+                        <textarea name="description" id="description" rows="3" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">{{ listing.description }}</textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 transition">
+                            Update Listing
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

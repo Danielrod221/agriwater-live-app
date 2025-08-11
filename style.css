@@ -1,0 +1,32 @@
+/* static/css/style.css */
+
+/* Set a default font and text color for the whole site */
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b; /* This is a dark slate color, similar to Tailwind's slate-800 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Style for the main dashboard heading */
+h1 {
+    color: #0f172a; /* A darker slate for main headings */
+}
+
+/* Style for section headings */
+h2 {
+    color: #334155; /* A slightly lighter slate for subheadings */
+}
+
+/* Default link styling to match your dashboard's theme */
+a {
+    color: #2563eb; /* Tailwind's blue-600 */
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #1d4ed8; /* Tailwind's blue-800 for hover */
+    text-decoration: underline;
+}
